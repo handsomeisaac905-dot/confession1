@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Just Honesty</title>
+      <style>
+          * {
+              box-sizing: border-box;
+              margin: 0;
+              padding: 0;
+          }
+  
+          body {
+              background-color: #0a0a12;
+              color: #e0e0e0;
+              font-family: 'Courier New', Courier, monospace;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              min-height: 100vh;
+              padding: 20px;
+          }
+  
+          .container {
+              background: #11111a;
+              border: 1px solid #ff0055;
+              box-shadow: 0 0 15px rgba(255, 0, 85, 0.3), inset 0 0 10px rgba(255, 0, 85, 0.1);
+              border-radius: 12px;
+              padding: 40px 30px;
+              max-width: 500px;
+              text-align: center;
+              position: relative;
+              overflow: hidden;
+          }
+  
+          h1 {
+              color: #ff0055;
+              text-shadow: 0 0 8px #ff0055;
+              margin-bottom: 20px;
+              font-size: 1.8rem;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+          }
+  
+          p {
+              line-height: 1.6;
+              margin-bottom: 20px;
+              font-size: 1rem;
+              color: #b3b3b3;
+          }
+  
+          .highlight {
+              color: #00e6e6;
+              text-shadow: 0 0 5px rgba(0, 230, 230, 0.5);
+              font-weight: bold;
+          }
+  
+          .button-group {
+              display: flex;
+              flex-direction: column;
+              gap: 15px;
+              margin-top: 30px;
+          }
+  
+          button {
+              padding: 15px 20px;
+              font-size: 1rem;
+              font-family: inherit;
+              border-radius: 8px;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+          }
+  
+          /* The intended choice */
+          .btn-reject {
+              background: transparent;
+              color: #00e6e6;
+              border: 1px solid #00e6e6;
+              box-shadow: 0 0 10px rgba(0, 230, 230, 0.2);
+          }
+  
+          .btn-reject:hover {
+              background: #00e6e6;
+              color: #000;
+              box-shadow: 0 0 20px #00e6e6;
+          }
+  
+          /* The unlikely choice */
+          .btn-accept {
+              background: transparent;
+              color: #444;
+              border: 1px solid #444;
+          }
+  
+          .btn-accept:hover {
+              color: #ff0055;
+              border-color: #ff0055;
+              box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+          }
+  
+          #response-message {
+              margin-top: 25px;
+              font-weight: bold;
+              display: none;
+          }
+      </style>
+  </head>
+  <body>
+  
+      <div class="container">
+          <h1>Full Disclosure</h1>
+          
+          <p>I’m sending this because I couldn't keep it to myself anymore: <span class="highlight">I really like you.</span></p>
+          
+          <p>But I'm also sending this hoping you'll reject me. Right now, I'm building my life from the ground up. I know what you deserve, and honestly, I don't think I'm in a position to provide the kind of lifestyle, time, or energy you're worthy of yet.</p>
+          
+          <p>I needed to get this off my chest, but I don't want to hold you back. Please take the easy way out below, no hard feelings.</p>
+  
+          <div class="button-group" id="btn-container">
+              <button class="btn-reject" onclick="handleResponse('reject')">I understand. Let's just be friends.</button>
+              <button class="btn-accept" onclick="handleResponse('accept')">I hear you, but I still want to talk.</button>
+          </div>
+  
+          <div id="response-message"></div>
+      </div>
+  
+      <script>
+          function handleResponse(choice) {
+              const btnContainer = document.getElementById('btn-container');
+              const responseMessage = document.getElementById('response-message');
+              
+              btnContainer.style.display = 'none';
+              responseMessage.style.display = 'block';
+  
+              if (choice === 'reject') {
+                  responseMessage.style.color = '#00e6e6';
+                  responseMessage.style.textShadow = '0 0 8px #00e6e6';
+                  responseMessage.innerHTML = "Message received. Thank you for understanding and letting me focus. Friends it is.";
+              } else {
+                  responseMessage.style.color = '#ff0055';
+                  responseMessage.style.textShadow = '0 0 8px #ff0055';
+                  responseMessage.innerHTML = "Are you sure? We have a lot to talk about then. Let me know when you're free.";
+              }
+          }
+      </script>
+  
+  </body>
+</html>
